@@ -123,3 +123,14 @@ if ubicación:
     )
 print(respuesta2.choices[0].text.strip())
 """
+
+###     Creacion del chatbot basico 
+
+"""
+Para hacer el chatbot necesirtamos ahcer un par de cosas antes
+
+- Importar bibliotecas y configurar clave
+- Hacer la funcion para peticiones 
+- Configurar el funcionamiento basico 
+- Ejecutar el chatbot
+"""
