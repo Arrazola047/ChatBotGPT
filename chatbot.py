@@ -48,4 +48,5 @@ while True:
 """
 Para mantener el contexto de las conversaciones podemos hacer uso de una variable string para almacenar los mensajes anteriores 
 al enviar esta cadena junto con la nueva pregunta para gpt el modelo va a poder dar una pregunta mas especifica y mas coherente
+ahora lo que necesitamos es configurar una base datos con sql para conectarla por medio de python 
 """
