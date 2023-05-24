@@ -25,6 +25,13 @@ def similitud_coseno(vec1, vec2):
 
     return sim_cos
 
+def es_relevante(respuesta, entrada, umbral=0.5):
+    entrada_vectorizada = modelo_spacy(entrada).vector
+    respuesta_vectorizada = modelo_spacy(respuesta).vector
+    similitud = similitud_coseno(entrada_vectorizada, respuesta_vectorizada)
+    
+    return similitud >= umbral
+
 def filtrar_lista_negra(texto, lista_negra):
     token = modelo_spacy(texto)
     resultado = []
