@@ -75,10 +75,16 @@ while True:
     prompt = f"El usuario pregunta: {ingreso_usuario}"
     conversacion_historica += prompt
     respuesta_gpt = preguntar_chat_gpt(prompt)
-    print(f"{respuesta_gpt}") 
     
-    preguntas_anteriores.append(ingreso_usuario) # Agregamos a nuestro array correspondiente las preguntas hechas por el usuario
-    respuestas_anteriores.append(respuesta_gpt) # Agregamos a nuestro array correspondiente las respuestas hechas por el modelo IA 
+    relevante = es_relevante(respuesta_gpt, ingreso_usuario)
+    
+    if relevante:
+        print(f"{respuesta_gpt}") 
+        preguntas_anteriores.append(ingreso_usuario) # Agregamos a nuestro array correspondiente las preguntas hechas por el usuario
+        respuestas_anteriores.append(respuesta_gpt) # Agregamos a nuestro array correspondiente las respuestas hechas por el modelo IA 
+        
+    else: 
+        print("La respuesta no es relevante")
     
 """
 Para mantener el contexto de las conversaciones podemos hacer uso de una variable string para almacenar los mensajes anteriores 
