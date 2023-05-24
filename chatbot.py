@@ -82,7 +82,6 @@ while True:
         print(f"{respuesta_gpt}") 
         preguntas_anteriores.append(ingreso_usuario) # Agregamos a nuestro array correspondiente las preguntas hechas por el usuario
         respuestas_anteriores.append(respuesta_gpt) # Agregamos a nuestro array correspondiente las respuestas hechas por el modelo IA 
-        
     else: 
         print("La respuesta no es relevante")
     
