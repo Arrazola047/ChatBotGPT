@@ -1,5 +1,6 @@
 # Establecemos las bibliotecas
 import openai 
+import numpy as np
 import os 
 import spacy
 from dotenv import load_dotenv
@@ -14,6 +15,15 @@ preguntas_anteriores = []
 respuestas_anteriores = []
 modelo_spacy = spacy.load("es_core_news_md")
 palabras_prohibidas = ["madrid", "Palabra2"]
+
+def similitud_coseno(vec1, vec2):
+    superposicion = np.dot(vec1, vec2)
+    magnitud1 = np.linalg.norm(vec1)
+    magnitud2 = np.linalg.norm(vec2)
+    
+    sim_cos = superposicion / (magnitud1*magnitud2)
+
+    return sim_cos
 
 def filtrar_lista_negra(texto, lista_negra):
     token = modelo_spacy(texto)
